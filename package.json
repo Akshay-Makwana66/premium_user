@@ -1,0 +1,26 @@
+{
+  "name": "premium_user",
+  "version": "1.0.0",
+  "description": "a. User: name, number, email, password,is_premium_user(boolean type).\r b. Article:title, content, is_premium(boolean type)\r c. Comments: article_reference, user_reference, comment\r #3. Create 3 sample articles, (1 premium and 2 not premium) in database:-\r Article1: title:’Article 1’, content:’This is a sample article1’,is_premium:false\r Article2: title:’Article 2’, content:’This is a sample article2’,is_premium:false\r Article3: title:’Article 3’, content:’This is a sample article3’,is_premium:true\r Use a unique id as a primary key for all the documents in database\r (mongodb will have _id )\r #Task Conditions:-\r a. User can sign-up using the sign-up route which will be open to the public.\r b. In sign-up, user can set his number,email, password and name.\r c. User will be able to login using his (number or email) and (password)\r d. User can see all the articles without logging in (except premium articles)\r e. Only logged in user can comment on Articles.\r f. User can opt to become a Premium User by paying some amount.\r g. Only premium users(check by is_premium) can view and comment on premium\r Articles.\r #Creating the following routes is must :-\r a. User Login. (/login) POST\r b. User Signup. (/signup) POST\r c. User Profile edit . (/editUser) POST\r d. User Delete. (/deleteUser) DELETE (note: user can delete his profile only when he\r is logged in)\r e. Get Article (premium articles should be protected).(/getArticle/:id) GET\r f. Get All Articles (premium articles should be protected). (/getAllArticles) GET\r g. Comment on Articles (only logged in users should be allowed to\r comment)(/comment) POST\r h. Go premium(/goPremium) POST —> Use this route to make user a premium user\r (payment is not expected only change user to premium when the route is hit by a\r logged-in user)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akshay-Makwana66/premium_user.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akshay-Makwana66/premium_user/issues"
+  },
+  "homepage": "https://github.com/Akshay-Makwana66/premium_user#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.1",
+    "mongoose": "^7.4.1",
+    "nodemon": "^3.0.1"
+  }
+}
