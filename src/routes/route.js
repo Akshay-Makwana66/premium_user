@@ -24,5 +24,4 @@ router.get('/getAllArticles',getAllArticles);
 // Comment Api------------
 router.post('/comment',authentication,commentValidations,createComment);
 
-
 module.exports = router;
