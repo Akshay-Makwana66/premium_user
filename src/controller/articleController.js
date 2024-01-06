@@ -7,6 +7,7 @@ const createArticle = async (req,res)=>{
         let data = req.body;
         let {title, content} = data;
         let savedData = await articleModel.create(data);
+        
         res.status(201).send({status:true,data:savedData, message:`Your Article Is Created Successfully`})
     }catch(err){
         res.status(500).send({status: false,message: `Sorry for the inconvenience caused`,Error : err.message})
@@ -16,7 +17,6 @@ const createArticle = async (req,res)=>{
 const getArticleById = async (req,res)=>{
     try{
         let  articleId = req.params.id;
-        console.log(articleId);
         if (!mongoose.isValidObjectId(articleId)) return res.status(400).send({ status: false, message: " pls entered valid objectId"});
         let savedData = await articleModel.findOne({_id:articleId});
         if(!savedData) return res.status(404).send({status:false, message: ' Article not found , write correct article id'})
